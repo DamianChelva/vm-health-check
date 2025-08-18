@@ -52,7 +52,6 @@ else
     echo "$state"
 fi
 # ...existing code...
-# Testing
 #if $DETAILS; then
 #   echo "State: $state"
 #    echo "Disk usage: ${disk_usage}%"
