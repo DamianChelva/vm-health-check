@@ -36,7 +36,6 @@ if [ "$cpu_usage" -ge "$THRESHOLD" ]; then
     details_msg+="CPU usage is ${cpu_usage}% (>=${THRESHOLD}%). "
 fi
 
-# ...existing code...
 if $DETAILS; then
     echo "State: $state"
     echo "Disk usage: ${disk_usage}%"
@@ -45,21 +44,6 @@ if $DETAILS; then
     if [ "$state" == "unhealthy" ]; then
         echo "Reason(s): $details_msg"
     fi
-    echo ""
-    echo "Disk space usage for root directories (/):"
-    sudo du -sh /* 2>/dev/null | sort -hr
 else
-    echo "$state"
+    echo "State:$state"
 fi
-# ...existing code...
-#if $DETAILS; then
-#   echo "State: $state"
-#    echo "Disk usage: ${disk_usage}%"
-#    echo "Memory usage: ${mem_usage}%"
-#    echo "CPU usage: ${cpu_usage}%"
-#    if [ "$state" == "unhealthy" ]; then
-#        echo "Reason(s): $details_msg"
-#    fi
-#else
-#    echo "$state"
-#fi
